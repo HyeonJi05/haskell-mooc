@@ -107,8 +107,8 @@ isZero n = False
 -- computes the sum 1+2+...+n
 
 sumTo :: Integer -> Integer
-sumTo = todo
-
+sumTo 0 = 0
+sumTo n = div (n*(n+1)) 2
 ------------------------------------------------------------------------------
 -- Ex 10: power n k should compute n to the power k (i.e. n^k)
 -- Use recursion.
