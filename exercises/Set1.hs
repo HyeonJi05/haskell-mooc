@@ -22,16 +22,16 @@ import Mooc.Todo
 -- values 1 and 2, respectively.
 
 one :: Int
-two :: Int
 one = 1
-two = 2
 
+two :: Int
+two = 2
 ------------------------------------------------------------------------------
 -- Ex 2: define the function double of type Integer->Integer. Double
 -- should take one argument and return it multiplied by two.
 
 double :: Integer -> Integer
-double x = 2*x
+double x = todo
 
 ------------------------------------------------------------------------------
 -- Ex 3: define the function quadruple that uses the function double
@@ -39,7 +39,7 @@ double x = 2*x
 -- four.
 
 quadruple :: Integer -> Integer
-quadruple x = double (double x)
+quadruple x = todo
 
 ------------------------------------------------------------------------------
 -- Ex 4: define the function distance. It should take four arguments of
