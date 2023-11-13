@@ -63,7 +63,8 @@ oddFactorial n = if (mod n 2)/=0 then n*(oddFactorial (n-1)) else oddFactorial (
 -- * https://en.wikipedia.org/wiki/Euclidean_algorithm
 
 myGcd :: Integer -> Integer -> Integer
-myGcd = todo
+myGcd a 0 = a
+myGcd a b = myGcd b (mod a b)
 
 ------------------------------------------------------------------------------
 -- Ex 4: Implement the function leftpad which adds space characters
