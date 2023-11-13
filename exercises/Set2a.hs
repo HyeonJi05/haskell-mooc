@@ -10,6 +10,8 @@
 --  * length
 --  * null
 
+
+
 module Set2a where
 
 import Mooc.Todo
@@ -60,7 +62,7 @@ updateAt i x xs = if (i/=0) then take (i) xs ++ [x] ++ drop (i+1) xs else [x] ++
 --   substring 0 4 "abcdefgh"  ==>  "abcd"
 
 substring :: Int -> Int -> String -> String
-substring i j s = take (j-i) (drop (i) s)
+substring i j s = take (j-i) (drop i s)
 
 ------------------------------------------------------------------------------
 -- Ex 5: check if a string is a palindrome. A palindrome is a string
@@ -75,8 +77,7 @@ substring i j s = take (j-i) (drop (i) s)
 --   isPalindrome "AB"       ==>  False
 
 isPalindrome :: String -> Bool
-isPalindrome str = todo
-
+isPalindrome str = str==(reverse str) 
 ------------------------------------------------------------------------------
 -- Ex 6: implement the function palindromify that chops a character
 -- off the front _and_ back of a string until the result is a
