@@ -96,7 +96,10 @@ leftpad str n = if length str<n then leftpad (" "++str) n else str
 -- * you'll probably need a recursive helper function
 
 countdown :: Integer -> String
-countdown = todo
+codo :: Integer -> String
+codo 0 = ""
+codo n= show n ++ "... " ++ codo (n-1) 
+countdown n = "Ready! " ++ codo n ++ "Liftoff!"
 
 ------------------------------------------------------------------------------
 -- Ex 6: implement the function smallestDivisor that returns the
