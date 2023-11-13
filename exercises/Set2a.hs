@@ -104,8 +104,9 @@ palindromify s = if (s/=reverse s) then palindromify (take ((length s)-2) (drop 
 --   safeDiv 4 0  ==> Nothing
 
 safeDiv :: Integer -> Integer -> Maybe Integer
-safeDiv x y = todo
-
+safeDiv x y 
+    | y==0 = Nothing
+    | otherwise = Just (div x y)
 ------------------------------------------------------------------------------
 -- Ex 8: implement a function greet that greets a person given a first
 -- name and possibly a last name. The last name is represented as a
