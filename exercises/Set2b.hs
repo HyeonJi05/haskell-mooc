@@ -117,7 +117,9 @@ countdown n = "Ready! " ++ codo n ++ "Liftoff!"
 -- Hint: remember the mod function!
 
 smallestDivisor :: Integer -> Integer
-smallestDivisor = todo
+help :: Integer -> Integer -> Integer
+help n m = if (mod n m)==0 then m else help n (m+1) 
+smallestDivisor n = help n 2
 
 ------------------------------------------------------------------------------
 -- Ex 7: implement a function isPrime that checks if the given number
