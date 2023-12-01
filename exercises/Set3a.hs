@@ -30,7 +30,7 @@ import Data.List
 maxBy :: (a -> Int) -> a -> a -> a
 maxBy measure a b 
     | measure a >= measure b = a
-    | otherwise = b 
+    | otherwise = b
 
 ------------------------------------------------------------------------------
 -- Ex 2: implement the function mapMaybe that takes a function and a
