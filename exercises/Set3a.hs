@@ -250,9 +250,12 @@ sumRights (x:xs) = case x of
 --   multiCompose [reverse, tail, (++"bar")] "foo" ==> "raboo"
 --   multiCompose [(3*), (2^), (+1)] 0 ==> 6
 --   multiCompose [(+1), (2^), (3*)] 0 ==> 2
-
-multiCompose fs = todo
-
+multiCompose :: [a->a]->a->a
+multiCompose [] val = val
+multiCompose fs val = multi (reverse fs) val
+multi :: [a->a]->a->a
+multi [] val =val
+multi (x:xs) val = multi xs (x val)
 ------------------------------------------------------------------------------
 -- Ex 13: let's consider another way to compose multiple functions. Given
 -- some function f, a list of functions gs, and some value x, define
