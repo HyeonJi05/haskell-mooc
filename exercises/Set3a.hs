@@ -206,6 +206,12 @@ joinToLength = todo
 --   [] +|+ [True]        ==> [True]
 --   [] +|+ []            ==> []
 
+(+|+) :: [a] -> [a] -> [a]
+[] +|+ [] = []
+(x:xs) +|+ [] = [x]
+[] +|+ (y:ys) = [y]
+(x:xs) +|+ (y:ys) = [x,y] 
+
 
 ------------------------------------------------------------------------------
 -- Ex 11: remember the lectureParticipants example from Lecture 2? We
