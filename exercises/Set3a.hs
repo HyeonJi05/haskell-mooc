@@ -275,8 +275,9 @@ multi (x:xs) val = multi xs (x val)
 --   multiApp id [head, (!!2), last] "axbxc" ==> ['a','b','c'] i.e. "abc"
 --   multiApp sum [head, (!!2), last] [1,9,2,9,3] ==> 6
 
-multiApp = todo
-
+multiApp f fs val = f (app fs val)
+app [] val = []
+app (x:xs) val = [x val] ++ app xs val
 ------------------------------------------------------------------------------
 -- Ex 14: in this exercise you get to implement an interpreter for a
 -- simple language. You should keep track of the x and y coordinates,
@@ -310,4 +311,11 @@ multiApp = todo
 -- function, the surprise won't work. See section 3.8 in the material.
 
 interpreter :: [String] -> [String]
-interpreter commands = todo
+interpreter fs = inter fs 0 0
+inter [] x y =[]
+inter ("up":xs) x y = inter xs x (y+1)
+inter ("down":xs) x y = inter xs x (y-1)
+inter ("right":xs) x y = inter xs (x+1) y
+inter ("left":xs) x y = inter xs (x-1) y
+inter ("printY":xs) x y = [show y]++(inter xs x y)
+inter ("printX":xs) x y = [show x]++(inter xs x y)
