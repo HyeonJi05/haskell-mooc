@@ -42,7 +42,9 @@ maxBy measure x y
 --   mapMaybe length (Just "abc") ==> Just 3
 
 mapMaybe :: (a -> b) -> Maybe a -> Maybe b
-mapMaybe f x = todo
+mapMaybe _ Nothing = Nothing
+mapMaybe f (Just x) = Just (f x)
+
 
 ------------------------------------------------------------------------------
 -- Ex 3: implement the function mapMaybe2 that works like mapMaybe
