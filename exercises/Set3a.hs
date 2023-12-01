@@ -232,7 +232,10 @@ joinToLength x l = filter ((x==).length) [a++b|a<-l,b<-l]
 --   sumRights [Left "bad!", Left "missing"]         ==>  0
 
 sumRights :: [Either a Int] -> Int
-sumRights = todo
+sumRights [] = 0
+sumRights (x:xs) = case x of
+    Right a -> a + sumRights xs
+    Left b -> 0 + sumRights xs
 
 ------------------------------------------------------------------------------
 -- Ex 12: recall the binary function composition operation
