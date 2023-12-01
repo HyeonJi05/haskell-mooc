@@ -275,7 +275,9 @@ multi (x:xs) val = multi xs (x val)
 --   multiApp id [head, (!!2), last] "axbxc" ==> ['a','b','c'] i.e. "abc"
 --   multiApp sum [head, (!!2), last] [1,9,2,9,3] ==> 6
 
+multiApp :: ([b] -> c) -> [a -> b] -> a -> c
 multiApp f fs val = f (app fs val)
+app :: [a -> b] -> a -> [b]
 app [] val = []
 app (x:xs) val = [x val] ++ app xs val
 ------------------------------------------------------------------------------
